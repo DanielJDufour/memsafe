@@ -1,0 +1,20 @@
+{
+  "name": "memsafe",
+  "version": "0.0.0",
+  "description": "Memory-Safe Data Structures",
+  "main": "index.js",
+  "scripts": {
+    "format": "npx prettier --arrow-parens=avoid --print-width=1000 --trailing-comma=none --write *.js",
+    "setup": "cd test-data && ./setup.sh",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "array",
+    "memory"
+  ],
+  "author": "Daniel J. Dufour",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "flug": "^2.8.2"
+  }
+}
