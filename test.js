@@ -57,6 +57,9 @@ test("MemSafeTable", ({ eq }) => {
   eq(decompressed, rows);
 
   eq(table.find(row => row.name === "Bosc de Plana en Blanca").geonameid, "3039493");
+
+  table.drop_column("geonameid");
+  eq("geonameid" in table.find(row => row.name === "Bosc de Plana en Blanca"), false);
 });
 
 // test("MemSafeTable: 100k", ({ eq }) => {

@@ -64,7 +64,7 @@ class MemSafeTable {
   }
 
   drop_column(column_name) {
-    if (this._column_names.indexOf(column_name)) throw new Error("[memsafe] can't drop column that doesn't exist!");
+    if (this._column_names.indexOf(column_name) === -1) throw new Error("[memsafe] can't drop column that doesn't exist!");
     this._column_names = this._column_names.filter(name => name !== column_name);
     this._columns = this._columns.filter(col => col[0] !== column_name);
   }
