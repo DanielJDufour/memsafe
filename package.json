@@ -1,6 +1,6 @@
 {
   "name": "memsafe",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Memory-Safe Data Structures",
   "main": "./index.js",
   "files": [
