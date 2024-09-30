@@ -55,6 +55,8 @@ test("MemSafeTable", ({ eq }) => {
   }
   eq(ct, 1000);
   eq(decompressed, rows);
+
+  eq(table.find(row => row.name === "Bosc de Plana en Blanca").geonameid, "3039493");
 });
 
 // test("MemSafeTable: 100k", ({ eq }) => {

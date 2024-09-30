@@ -47,4 +47,13 @@ for (const row of table) {
   console.log(row)
 }
 // { id: 123, make: "Chevrolet", model: "Malibu", "year": 2023 }
+
+table.drop_column("year");
+for (const row of table) {
+  console.log(row)
+}
+// { id: 123, make: "Chevrolet", model: "Malibu" }
+
+table.find(row => row.id === 123);
+// { id: 123, make: "Chevrolet", model: "Malibu" }
 ```

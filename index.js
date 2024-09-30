@@ -63,6 +63,23 @@ class MemSafeTable {
     this.length = 0;
   }
 
+  drop_column(column_name) {
+    if (this._column_names.indexOf(column_name)) throw new Error("[memsafe] can't drop column that doesn't exist!");
+    this._column_names = this._column_names.filter(name => name !== column_name);
+    this._columns = this._columns.filter(col => col[0] !== column_name);
+  }
+
+  find(callbackFn, thisArg) {
+    if (thisArg !== undefined) throw new Error("unsupported thisArg");
+    let i = -1;
+    for (const row of this) {
+      i++;
+      if (callbackFn(row, i, thisArg || this) === true) {
+        return row;
+      }
+    }
+  }
+
   push(row) {
     // to-do add support for dynamically adding new column
 
