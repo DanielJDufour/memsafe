@@ -37,7 +37,7 @@ test("MemSafeTable", ({ eq }) => {
   rows = rows.map(row => Object.fromEntries(row.map((col, icol) => [column_names[icol], col])));
   const table = new MemSafeTable({ column_names });
   for (const row of rows) {
-    table.append(row);
+    table.push(row);
   }
   eq(table.length, 1000);
   const columns = Object.fromEntries(table._columns);
@@ -68,7 +68,7 @@ test("MemSafeTable", ({ eq }) => {
 //   rows = rows.map(row => Object.fromEntries(row.map((col, icol) => [column_names[icol], col])));
 //   const table = new MemSafeTable({ column_names });
 //   for (const row of rows) {
-//     table.append(row);
+//     table.push(row);
 //   }
 //   eq(table.length, 100_000);
 

@@ -63,7 +63,7 @@ class MemSafeTable {
     this.length = 0;
   }
 
-  append(row) {
+  push(row) {
     // to-do add support for dynamically adding new column
 
     // iterate over all the columns
